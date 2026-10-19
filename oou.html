@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Opizzy Concept – OOU Pre-Degree Requirements</title>
+<style>
+:root{--navy:#0d1b4c;--gold:#f4b400;--ink:#16213f;--card:#fff;--line:#c9d0e2;--err:#c0262d;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0}
+body{background:radial-gradient(circle at 85% -5%,rgba(244,180,0,.28),transparent 45%),linear-gradient(160deg,#0d1b4c,#08122f);font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--ink);display:flex;justify-content:center;padding:18px 14px;min-height:100%}
+.card{width:100%;max-width:520px;background:var(--card);border-radius:18px;overflow:hidden;box-shadow:0 22px 50px rgba(0,0,0,.4);align-self:flex-start}
+header{background:linear-gradient(135deg,#0d1b4c,#1a3577);color:#fff;padding:22px;display:flex;gap:14px;align-items:center;border-bottom:4px solid var(--gold)}
+.logo{flex:none;width:54px;height:54px;border-radius:50%;background:#0d1b4c;border:3px solid var(--gold);display:grid;place-items:center;font-weight:900;font-size:20px}.logo span{color:var(--gold)}
+header small{color:var(--gold);font-weight:700;font-size:13px}
+header h1{font-size:19px;line-height:1.25;margin-top:4px}
+.bar{height:8px;background:#e3e8f5}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#f4b400,#ffd24d);border-radius:0 8px 8px 0;transition:width .35s}
+.body{padding:22px}
+.step-label{display:inline-block;font-size:13px;font-weight:700;color:#7a5a00;background:#fff3cf;padding:4px 12px;border-radius:20px}
+h2{font-size:23px;margin:10px 0 4px;color:var(--navy)}
+.hint{font-size:14px;color:#4b5679;margin-bottom:14px;line-height:1.4}
+label{display:block;font-weight:600;font-size:14px;margin:12px 0 5px}
+label i{font-weight:500;color:#6a7596;font-style:normal}
+input,textarea,select{width:100%;font:inherit;font-size:17px;padding:13px 14px;border:2px solid var(--line);border-radius:12px;background:#f7f9fd;color:var(--ink)}
+input:focus,textarea:focus,select:focus,button:focus-visible{outline:3px solid rgba(244,180,0,.45);outline-offset:1px;border-color:var(--gold);background:#fff}
+.err{color:var(--err);font-size:14px;font-weight:600;margin-top:8px;min-height:18px}
+.row{display:flex;gap:10px;margin-top:18px}
+button{font:inherit;font-weight:800;font-size:16px;padding:14px 20px;border-radius:12px;border:0;cursor:pointer}
+.next{background:var(--gold);color:var(--navy);flex:1;box-shadow:0 6px 14px rgba(244,180,0,.4)}
+.back{background:#e6eaf5;color:var(--navy)}
+.pv{display:block;max-width:100%;max-height:240px;margin-top:10px;border-radius:12px;border:2px solid var(--line)}
+.rr{display:flex;gap:8px;margin-top:8px}.rs{flex:1;min-width:0}.rg{width:auto;flex:none;padding:12px 6px}
+.sum{list-style:none;padding:0}
+.sum h3{font-size:14px;color:var(--navy);background:#fff3cf;padding:6px 10px;border-radius:8px;margin:14px 0 2px}
+.sum li{padding:9px 0;border-bottom:1px solid var(--line);font-size:15px;word-break:break-word}
+.sum b{display:block;font-size:12px;color:#5a6690}
+button.wa{display:block;width:100%;text-align:center;background:#1fa855;color:#fff;padding:16px;margin-top:18px;box-shadow:0 6px 14px rgba(31,168,85,.4)}
+.note{font-size:12.5px;color:#5a6690;margin-top:12px;line-height:1.4}
+footer{background:var(--navy);color:var(--gold);text-align:center;font-weight:800;padding:15px;font-size:16px}
+@keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.body>*{animation:in .3s ease both}
+@media (prefers-reduced-motion:reduce){.body>*{animation:none}}
+</style>
+</head>
+<body>
+<main class="card">
+  <header><div class="logo">O<span>C</span></div><div><small>OPIZZY CONCEPT</small><h1>OOU PRE-DEGREE REQUIREMENTS</h1></div></header>
+  <div class="bar"><i id="prog"></i></div>
+  <div class="body" id="body"></div>
+  <footer>OPIZZY CONCEPT CARES ✅🖨️🎓</footer>
+</main>
+<script>
+var WA="2348063279523",year=new Date().getFullYear(),D={etype:"WAEC",level:"100 Level"},results=[],photos={result:null,passport:null},step=0;
+var GR=["A1","B2","B3","C4","C5","C6","D7","E8","F9"];
+var SUBS=["English Language","Mathematics","Biology","Chemistry","Physics","Further Mathematics","Economics","Government","Literature in English","Civic Education","Geography","Agricultural Science","Commerce","Financial Accounting","Christian Religious Studies","Islamic Studies","Yoruba","Technical Drawing","Computer Studies","Data Processing"];
+function yrs(){var a=[];for(var y=year;y>=year-25;y--)a.push(String(y));return a}
+var steps=[
+ {sec:"PERSONAL DETAILS",t:"Personal details",h:"Enter your details exactly as they appear on your documents.",fields:[
+  {id:"name",l:"Full name"},{id:"sex",l:"Sex",o:["Male","Female"]},{id:"dob",l:"Date of birth",type:"date"},
+  {id:"state",l:"State of origin"},{id:"lga",l:"LGA"},{id:"hometown",l:"Hometown"},
+  {id:"religion",l:"Religion",o:["Christianity","Islam","Traditional","Other"]}]},
+ {sec:"PERSONAL DETAILS",t:"Contact and ID",h:"Use a phone number and email you can access.",fields:[
+  {id:"phone",l:"Mobile no.",type:"tel",k:"phone"},{id:"email",l:"Email address",type:"email",k:"email"},
+  {id:"address",l:"Permanent home address",type:"textarea"},{id:"hobbies",l:"Hobbies"},
+  {id:"nin",l:"NIN (National Identification Number)",k:"nin",max:11,mode:"numeric"},
+  {id:"jamb",l:"JAMB registration no. <i>(optional if not yet registered)</i>",opt:1,k:"jamb"}]},
+ {sec:"NEXT OF KIN DETAILS",t:"Next of kin",h:"Details of a parent, guardian or close relative.",fields:[
+  {id:"nname",l:"Full name"},{id:"naddress",l:"Address",type:"textarea"},{id:"nrel",l:"Relationship"},
+  {id:"nphone",l:"Mobile no.",type:"tel",k:"phone"}]},
+ {sec:"PRE-DEGREE PROGRAMME DETAILS",t:"Programme details",h:"Tell us what you want to study.",fields:[
+  {id:"course",l:"Intended university course of study",ph:"e.g. Biochemistry, Accounting, Mass Communication"},
+  {id:"stream",l:"Faculty / stream option",o:["Science","Social Science","Commercial","Arts"]},
+  {id:"level",l:"Preferred entry level",o:["100 Level"],nb:1}]},
+ {sec:"O'LEVEL DETAILS",t:"O'Level details",h:"Enter these exactly as shown on your result and scratch card.",fields:[
+  {id:"etype",l:"Exam type",o:["WAEC","NECO","GCE"],nb:1},{id:"eno",l:"Exam no.",k:"eno"},
+  {id:"eyear",l:"Exam year",o:yrs()},{id:"pin",l:"Scratch card pin / token (for verification)"},
+  {id:"serial",l:"Scratch card serial number"}]},
+ {sec:"O'LEVEL RESULTS",t:"Subjects and grades",h:"Enter each subject with its grade exactly as on your result, e.g. Mathematics B3. At least 5 subjects.",kind:"results"},
+ {sec:"PHOTOS",t:"Photographs",h:"Upload clear photos. The result statement must be fully readable. Passport: white background preferred.",kind:"photos"}
+];
+var N=steps.length+1;
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function $(id){return document.getElementById(id)}
+function fieldHTML(f){
+ var v=D[f.id]||"",h='<label for="'+f.id+'">'+f.l+'</label>';
+ if(f.o){h+='<select id="'+f.id+'">'+(f.nb?'':'<option value="">Select</option>')+f.o.map(function(x){return'<option'+(x===v?' selected':'')+'>'+x+'</option>'}).join("")+'</select>'}
+ else if(f.type==="textarea")h+='<textarea id="'+f.id+'" rows="2">'+esc(v)+'</textarea>';
+ else h+='<input id="'+f.id+'" type="'+(f.type||"text")+'"'+(f.max?' maxlength="'+f.max+'"':'')+(f.mode?' inputmode="'+f.mode+'"':'')+(f.ph?' placeholder="'+f.ph+'"':'')+(f.type==="date"?' max="'+new Date().toISOString().slice(0,10)+'"':'')+' autocomplete="off" value="'+esc(v)+'">';
+ return h}
+function checkField(f){
+ var x=($(f.id).value||"").trim();
+ if(!x){if(f.opt){D[f.id]="";return""}return"Please fill in: "+f.l.replace(/<[^>]*>/g,"").trim()+"."}
+ if(f.k==="phone"&&!/^0\d{10}$/.test(x))return"Mobile no. must be 11 digits, starting with 0.";
+ if(f.k==="email"&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(x))return"Enter a valid email address.";
+ if(f.k==="nin"&&!/^\d{11}$/.test(x))return"NIN must be exactly 11 digits.";
+ if(f.k==="jamb"&&!/^[A-Za-z0-9]{10,14}$/.test(x))return"JAMB registration no. looks incorrect. Leave it empty if you have none yet.";
+ if(f.k==="eno"&&x.length<8)return"Enter your full exam number.";
+ D[f.id]=x;return""}
+function resRows(){var h='<datalist id="subs">'+SUBS.map(function(s){return'<option value="'+s+'">'}).join("")+'</datalist>';
+ for(var i=0;i<9;i++){var r=results[i]||{s:"",g:""};
+  h+='<div class="rr"><input class="rs" list="subs" placeholder="Subject" aria-label="Subject '+(i+1)+'" value="'+esc(r.s)+'"><select class="rg" aria-label="Grade '+(i+1)+'"><option value="">Grade</option>'+GR.map(function(g){return'<option'+(g===r.g?' selected':'')+'>'+g+'</option>'}).join("")+'</select></div>'}
+ return h}
+function readRows(){var s=document.querySelectorAll(".rs"),g=document.querySelectorAll(".rg"),a=[];for(var i=0;i<s.length;i++)a.push({s:s[i].value.trim(),g:g[i].value});return a}
+function resList(){return results.filter(function(r){return r.s}).map(function(r){return r.s+" "+r.g})}
+function prev(k){return photos[k]?'<img class="pv" alt="Preview" src="'+URL.createObjectURL(photos[k])+'">':''}
+function validate(s){
+ if(s.kind==="results"){var a=readRows(),n=0,seen={};for(var i=0;i<a.length;i++){var r=a[i];if(!r.s&&!r.g)continue;if(!r.s||!r.g)return"Row "+(i+1)+": enter both the subject and the grade.";if(seen[r.s.toLowerCase()])return"Row "+(i+1)+": "+r.s+" is entered twice.";seen[r.s.toLowerCase()]=1;n++}if(n<5)return"Enter at least 5 subjects with their grades.";results=a;return""}
+ if(s.kind==="photos"){if(!photos.result)return"Please upload a photo of your O'Level result statement.";if(!photos.passport)return"Please upload your passport photograph.";return""}
+ for(var j=0;j<s.fields.length;j++){var m=checkField(s.fields[j]);if(m)return m}return""}
+function render(){
+ var b=$("body");$("prog").style.width=(step/(N-1)*100)+"%";window.scrollTo(0,0);
+ if(step<steps.length){
+  var s=steps[step],h='<div class="step-label">Step '+(step+1)+' of '+(N-1)+'</div><h2>'+s.t+'</h2><p class="hint">'+s.h+'</p>';
+  if(s.kind==="results")h+=resRows();
+  else if(s.kind==="photos")h+='<label for="pr">Clear photo of O\'Level result statement</label><input id="pr" type="file" accept="image/*"><div id="pvr">'+prev("result")+'</div><label for="pp">Passport photograph</label><input id="pp" type="file" accept="image/*"><div id="pvp">'+prev("passport")+'</div>';
+  else h+=s.fields.map(fieldHTML).join("");
+  h+='<div class="err" id="err" role="alert"></div><div class="row">'+(step?'<button class="back" id="back">Back</button>':'')+'<button class="next" id="next">'+(step===steps.length-1?'Review':'Next')+'</button></div>';
+  b.innerHTML=h;
+  $("next").onclick=function(){var m=validate(s);if(m){$("err").textContent=m;return}step++;render()};
+  if(step)$("back").onclick=function(){if(s.kind==="results")results=readRows();else if(s.fields)s.fields.forEach(function(f){D[f.id]=($(f.id).value||"").trim()});step--;render()};
+  if(s.kind==="photos"){[["pr","result","pvr"],["pp","passport","pvp"]].forEach(function(p){$(p[0]).onchange=function(){photos[p[1]]=this.files[0]||null;$(p[2]).innerHTML=prev(p[1])}})}
+  else{var f=b.querySelector("input,select,textarea");if(f&&!s.kind)f.focus()}
+ }else review(b)}
+function review(b){
+ var h='<div class="step-label">Final check</div><h2>Confirm your details</h2><ul class="sum">',msg="OOU PRE-DEGREE REQUIREMENTS",last="";
+ steps.forEach(function(s){
+  if(s.sec!==last){h+='<h3>'+s.sec+'</h3>';msg+="\n\n"+s.sec;last=s.sec}
+  if(s.kind==="results"){h+='<li><b>Subjects and grades</b>'+esc(resList().join(", "))+'</li>';msg+="\nResults: "+resList().join(", ")}
+  else if(s.kind==="photos"){h+='<li><b>Result statement photo</b>'+esc(photos.result.name)+'</li><li><b>Passport photo</b>'+esc(photos.passport.name)+'</li>';msg+="\n(Result photo and passport photo attached)"}
+  else s.fields.forEach(function(f){var l=f.l.replace(/<[^>]*>/g,"").trim(),v=D[f.id]||"-";h+='<li><b>'+esc(l)+'</b>'+esc(v)+'</li>';msg+="\n"+l+": "+v})});
+ msg+="\n\nOPIZZY CONCEPT CARES";
+ h+='</ul><div class="row"><button class="back" id="back">Edit</button></div><button class="wa" id="send">Send details and photos on WhatsApp</button><div class="err" id="serr" role="alert"></div><p class="note">When your phone opens its share menu, choose WhatsApp, then choose Opizzy Concept (0806 327 9523). Your details are not saved on this page. They are only sent when you do this.</p>';
+ b.innerHTML=h;
+ $("back").onclick=function(){step=steps.length-1;render()};
+ $("send").onclick=function(){var e=$("serr"),files=[photos.result,photos.passport];
+  if(navigator.canShare&&navigator.canShare({files:files})){navigator.share({files:files,text:msg}).catch(function(){e.textContent="Sharing was cancelled. Tap the button to try again."})}
+  else{e.textContent="Your browser cannot attach the photos automatically. WhatsApp will open with your details. Please attach your result photo and passport photo in the chat.";window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(msg),"_blank")}}}
+render();
+</script>
+</body>
+</html>
